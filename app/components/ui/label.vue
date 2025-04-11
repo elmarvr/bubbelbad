@@ -2,12 +2,16 @@
 import type { ClassValue } from "cva";
 
 const props = defineProps<{
+  for?: string;
   class?: ClassValue;
 }>();
 </script>
 
 <template>
-  <h2 :class="cx('text-4xl font-bold pb-20', props.class)">
+  <RekaLabel
+    :for="props.for"
+    :class="cx('leading-none font-medium', props.class)"
+  >
     <slot />
-  </h2>
+  </RekaLabel>
 </template>

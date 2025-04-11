@@ -16,6 +16,7 @@
   --color-popover-foreground: oklch(14.5% 0 0);
 
   --color-border: oklch(92.2% 0 0);
+  --color-input: oklch(87% 0 0);
 }
 
 @theme inline {
@@ -34,6 +35,7 @@
   --color-popover-foreground: var(--color-popover-foreground);
 
   --color-border: var(--color-border);
+  --color-input: var(--color-input);
 }
 
 @utility container {
