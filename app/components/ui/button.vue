@@ -20,15 +20,16 @@ export type ButtonVariants = VariantProps<typeof buttonVariants>;
 export interface ButtonProps extends PrimitiveProps {
   class?: ClassValue;
   variant?: ButtonVariants["variant"];
+  disabled?: boolean;
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), { as: "button" });
+const delegated = reactiveOmit(props, ["variant", "class"]);
 </script>
 
 <template>
   <RekaPrimitive
-    :as="as"
-    :as-child="asChild"
+    v-bind="delegated"
     :class="buttonVariants({ variant, class: props.class })"
   >
     <slot />

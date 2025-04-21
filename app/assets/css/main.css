@@ -19,7 +19,14 @@
   --color-input: oklch(87% 0 0);
 }
 
+.blue {
+  --color-accent: #d3dffb;
+  --color-accent-foreground: #2563eb;
+}
+
 @theme inline {
+  --font-display: "Clash Display", sans-serif;
+
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
 
@@ -50,5 +57,15 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: bold;
   }
 }

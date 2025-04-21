@@ -5,8 +5,11 @@ const { data: projects } = await useAsyncData(async () =>
 </script>
 
 <template>
-  <UiSection class="flex flex-col items-end">
-    <UiSectionTitle> Projects </UiSectionTitle>
+  <UiSection>
+    <div class="flex justify-center">
+      <UiSectionTitle> Projects </UiSectionTitle>
+    </div>
+
     <div
       v-for="project in projects"
       :key="project.id"

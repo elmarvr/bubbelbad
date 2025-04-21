@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import type { ClassValue } from "cva";
-
 const props = defineProps<{
   class?: ClassValue;
 }>();
 </script>
 
 <template>
-  <h2 :class="cx('text-7xl pb-20', props.class)">
+  <div
+    role="group"
+    aria-roledescription="slide"
+    :class="cx('min-w-0 shrink-0 basis-full pl-8', props.class)"
+  >
     <slot />
-  </h2>
+  </div>
 </template>

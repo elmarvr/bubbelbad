@@ -27,6 +27,7 @@ const { data: relatedServices } = await useAsyncData(
     <h1>
       {{ service.title }}
     </h1>
+
     <ContentRenderer :value="service" />
 
     <ul>

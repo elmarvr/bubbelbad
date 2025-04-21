@@ -49,4 +49,13 @@ export default defineNuxtConfig({
       optimizeTranslationDirective: false,
     },
   },
+  fonts: {
+    families: [
+      {
+        name: "Clash Display",
+        provider: "fontshare",
+        weights: [400, 500, 600, 700, 800, 900],
+      },
+    ],
+  },
 });

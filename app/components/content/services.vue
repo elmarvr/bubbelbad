@@ -5,45 +5,50 @@ const { data: services } = await useAsyncData(async () =>
 </script>
 
 <template>
-  <UiSection v-if="services" class="grid grid-cols-2 gap-20">
-    <UiSectionTitle class="pb-8">Services</UiSectionTitle>
+  <UiSection
+    v-if="services"
+    class="blue grid grid-cols-2 gap-y-20 bg-[#F6FDFF]"
+  >
+    <div>
+      <UiSectionTitle class="pb-6">
+        <slot name="title" mdc-unwrap="p" />
+      </UiSectionTitle>
 
-    <RekaTabsRoot
+      <slot />
+    </div>
+
+    <div />
+
+    <UiTabs
       :default-value="services[0]?.id"
-      orientation="vertical"
-      class="contents"
+      class="grid-cols-subgrid col-span-2"
     >
-      <div class="row-start-2">
-        <RekaTabsList class="flex flex-col">
-          <RekaTabsTrigger
-            class="text-start rounded-full px-5 py-3 flex items-center data-active:bg-primary data-active:text-primary-foreground"
-            v-for="(service, index) in services"
-            :key="service.id"
-            :value="service.id"
-          >
-            <span class="text-4xl w-14"> 0{{ index + 1 }} </span>
-            {{ service.title }}
-          </RekaTabsTrigger>
-        </RekaTabsList>
-      </div>
-      <div class="flex row-start-2">
-        <RekaTabsContent
+      <UiTabsList>
+        <UiTabsTrigger
           v-for="service in services"
           :key="service.id"
           :value="service.id"
         >
-          <ContentRenderer :value="service" />
+          {{ service.title }}
+        </UiTabsTrigger>
+      </UiTabsList>
 
-          <div class="pt-8 flex gap-4">
-            <UiButtonLink class="w-full" :to="service.path">
-              Read more
-            </UiButtonLink>
-            <UiButtonLink variant="outline" class="w-full" :to="service.path">
-              See all
-            </UiButtonLink>
-          </div>
-        </RekaTabsContent>
-      </div>
-    </RekaTabsRoot>
+      <UiTabsContent
+        v-for="service in services"
+        :key="service.id"
+        :value="service.id"
+      >
+        <ContentRenderer :value="service" />
+
+        <div class="pt-8 flex gap-4">
+          <UiButtonLink class="w-full" :to="service.path">
+            Read more
+          </UiButtonLink>
+          <UiButtonLink variant="outline" class="w-full" :to="service.path">
+            See all
+          </UiButtonLink>
+        </div>
+      </UiTabsContent>
+    </UiTabs>
   </UiSection>
 </template>

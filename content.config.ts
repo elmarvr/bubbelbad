@@ -29,6 +29,24 @@ export default defineContentConfig({
       },
       schema: projectSchema(),
     }),
+
+    features_en: defineCollection({
+      type: "data",
+      source: {
+        include: "en/features/*.md",
+        prefix: "/features",
+      },
+      schema: featureSchema(),
+    }),
+
+    testimonials_en: defineCollection({
+      type: "data",
+      source: {
+        include: "en/testimonials/*.md",
+        prefix: "/testimonials",
+      },
+      schema: testimonialSchema(),
+    }),
   },
 });
 
@@ -37,7 +55,6 @@ function contentSchema() {
     title: z.string(),
   });
 }
-
 function serviceSchema() {
   return z.object({
     title: z.string(),
@@ -47,5 +64,20 @@ function serviceSchema() {
 function projectSchema() {
   return z.object({
     title: z.string(),
+  });
+}
+function featureSchema() {
+  return z.object({
+    title: z.string(),
+    body: z.any(),
+  });
+}
+function testimonialSchema() {
+  return z.object({
+    name: z.string(),
+    role: z.string(),
+    avatar: z.string(),
+    company: z.string(),
+    body: z.any(),
   });
 }
