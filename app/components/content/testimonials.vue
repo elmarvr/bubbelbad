@@ -9,7 +9,7 @@ const items = computed(() => {
 </script>
 
 <template>
-  <UiSection class="flex gap-20">
+  <UiSection class="flex gap-20 bg-[url('/patterns/tiles.svg')]">
     <div>
       <UiSectionTitle class="pb-4 w-min">
         <slot name="title" mdc-unwrap="p" />

@@ -15,8 +15,7 @@ const { scrollNext, state } = useCarousel();
   <UiButton
     v-bind="delegated"
     :disabled="!state.canScrollNext"
-    variant="outline"
-    :class="cx('touch-manipulation size-8 rounded-full p-0', props.class)"
+    :class="cx('touch-manipulation size-12 rounded-full p-0', props.class)"
     @click="scrollNext"
   >
     <slot>

@@ -5,10 +5,7 @@ const { data: services } = await useAsyncData(async () =>
 </script>
 
 <template>
-  <UiSection
-    v-if="services"
-    class="blue grid grid-cols-2 gap-y-20 bg-[#F6FDFF]"
-  >
+  <UiSection v-if="services" class="blue grid grid-cols-2 gap-y-20">
     <div>
       <UiSectionTitle class="pb-6">
         <slot name="title" mdc-unwrap="p" />
@@ -41,11 +38,10 @@ const { data: services } = await useAsyncData(async () =>
         <ContentRenderer :value="service" />
 
         <div class="pt-8 flex gap-4">
-          <UiButtonLink class="w-full" :to="service.path">
-            Read more
-          </UiButtonLink>
-          <UiButtonLink variant="outline" class="w-full" :to="service.path">
+          <UiButtonLink :to="service.path"> Read more </UiButtonLink>
+          <UiButtonLink variant="link" :to="service.path">
             See all
+            <Icon name="lucide:chevron-right" class="text-xl ml-3" />
           </UiButtonLink>
         </div>
       </UiTabsContent>

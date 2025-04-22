@@ -9,7 +9,7 @@ const defaultValue = computed(() => {
 </script>
 
 <template>
-  <UiSection v-if="features" class="grid grid-cols-2 gap-y-20">
+  <UiSection v-if="features" class="grid grid-cols-2 gap-y-20 purple">
     <div>
       <UiSectionTitle class="pb-6">
         <slot name="title" mdc-unwrap="p" />

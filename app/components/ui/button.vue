@@ -6,8 +6,8 @@ const buttonVariants = cva({
   base: "px-5 h-12 rounded-full font-medium inline-flex items-center justify-center",
   variants: {
     variant: {
-      primary: "bg-primary text-primary-foreground",
-      outline: "border border-primary text-primary",
+      primary: "shadow-bubble text-button-foreground",
+      link: "text-button-foreground",
     },
   },
   defaultVariants: {

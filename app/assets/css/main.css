@@ -22,6 +22,12 @@
 .blue {
   --color-accent: #d3dffb;
   --color-accent-foreground: #2563eb;
+  --color-button-foreground: #6691f1;
+}
+
+.purple {
+  --color-accent: #e0d7f2;
+  --color-accent-foreground: #6b21a8;
 }
 
 @theme inline {
@@ -36,6 +42,8 @@
   --color-accent: var(--color-accent);
   --color-accent-foreground: var(--color-accent-foreground);
 
+  --color-button-foreground: var(--color-button-foreground);
+
   --color-muted: var(--color-muted);
 
   --color-popover: var(--color-popover);
@@ -43,6 +51,12 @@
 
   --color-border: var(--color-border);
   --color-input: var(--color-input);
+
+  --shadow-bubble: 1px 1px 3px 0px rgba(0, 2, 91, 0.25),
+    inset 8px 8px 8px 0px rgba(248, 191, 243, 0.25),
+    inset -8px 8px 8px 0px rgba(110, 221, 238, 0.15),
+    inset 0px -8.14px 8px 0px rgba(233, 224, 252, 0.3);
+  /* 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
 }
 
 @utility container {

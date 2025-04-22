@@ -46,6 +46,12 @@ const [provideCarousel, injectCarousel] = createInjectionState(() => {
     }
   }
 
+  function scrollTo(index: number) {
+    if (api.value) {
+      api.value.scrollTo(index);
+    }
+  }
+
   const onSelect = (api: CarouselApi) => {
     state.canScrollNext = api.canScrollNext();
     state.canScrollPrev = api.canScrollPrev();
@@ -59,6 +65,7 @@ const [provideCarousel, injectCarousel] = createInjectionState(() => {
     state,
     scrollNext,
     scrollPrev,
+    scrollTo,
   };
 });
 

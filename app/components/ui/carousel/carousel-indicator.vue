@@ -8,6 +8,7 @@ const { api, state } = useCarousel();
       v-for="(snap, index) in state.scrollSnapList"
       class="size-3 rounded-full bg-muted data-active:bg-foreground"
       :data-active="index === state.selectedScrollSnap ? '' : undefined"
+      @click="api?.scrollTo(index)"
     />
   </div>
 </template>
