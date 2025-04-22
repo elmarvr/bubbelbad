@@ -9,35 +9,43 @@ const defaultValue = computed(() => {
 </script>
 
 <template>
-  <UiSection v-if="features" class="grid grid-cols-2 gap-y-20 purple">
-    <div>
-      <UiSectionTitle class="pb-6">
-        <slot name="title" mdc-unwrap="p" />
-      </UiSectionTitle>
+  <UiSection
+    v-if="features"
+    class="purple bg-linear-to-b from-[#D9D8FD] via-[#DFE2FE] to-[#F3F5FE]"
+  >
+    <UiSectionContent class="grid grid-cols-2 gap-y-20">
+      <div>
+        <UiSectionTitle class="pb-6">
+          <slot name="title" mdc-unwrap="p" />
+        </UiSectionTitle>
 
-      <slot />
-    </div>
+        <slot />
+      </div>
 
-    <div />
+      <div />
 
-    <UiTabs :default-value="defaultValue" class="grid-cols-subgrid col-span-2">
-      <UiTabsList>
-        <UiTabsTrigger
+      <UiTabs
+        :default-value="defaultValue"
+        class="grid-cols-subgrid col-span-2"
+      >
+        <UiTabsList>
+          <UiTabsTrigger
+            v-for="feature in features"
+            :key="feature.id"
+            :value="feature.id"
+          >
+            {{ feature.title }}
+          </UiTabsTrigger>
+        </UiTabsList>
+
+        <UiTabsContent
           v-for="feature in features"
           :key="feature.id"
           :value="feature.id"
         >
-          {{ feature.title }}
-        </UiTabsTrigger>
-      </UiTabsList>
-
-      <UiTabsContent
-        v-for="feature in features"
-        :key="feature.id"
-        :value="feature.id"
-      >
-        <ContentRenderer :value="feature" />
-      </UiTabsContent>
-    </UiTabs>
+          <ContentRenderer :value="feature" />
+        </UiTabsContent>
+      </UiTabs>
+    </UiSectionContent>
   </UiSection>
 </template>

@@ -20,14 +20,34 @@
 }
 
 .blue {
+  --color-foreground: #0b1d46;
   --color-accent: #d3dffb;
   --color-accent-foreground: #2563eb;
+
   --color-button-foreground: #6691f1;
+
+  color: var(--color-foreground);
 }
 
 .purple {
+  --color-foreground: #31175e;
   --color-accent: #e0d7f2;
   --color-accent-foreground: #6b21a8;
+
+  color: var(--color-foreground);
+}
+
+.yellow {
+  --color-foreground: #4b4315;
+
+  color: var(--color-foreground);
+}
+
+.pink {
+  --color-foreground: #410b23;
+  --color-button-foreground: #e5679f;
+
+  color: var(--color-foreground);
 }
 
 @theme inline {

@@ -1,6 +1,6 @@
 <template>
   <LayoutNavigation />
-  <main class="container">
+  <main class="">
     <slot />
   </main>
 </template>

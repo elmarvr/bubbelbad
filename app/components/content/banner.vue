@@ -1,7 +1,7 @@
 <template>
   <div
     ref="banner"
-    class="flex flex-col hover:cursor-none py-20 gap-4 w-full whitespace-nowrap font-display text-9xl font-bold leading-none overflow-x-hidden"
+    class="flex purple flex-col hover:cursor-none py-20 gap-4 w-full whitespace-nowrap font-display text-9xl font-bold leading-none overflow-x-hidden bg-linear-to-b from-[#C3C3FD] via-[#EAE8FE] to-[#D9D8FD]"
   >
     <div class="relative">
       <div class="inline-flex gap-16" ref="toptrack">

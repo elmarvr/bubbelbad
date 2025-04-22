@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "reka-ui/nuxt",
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
+    "@nuxthub/core",
   ],
   css: ["~/assets/css/main.css"],
   vite: {
