@@ -1,44 +1,33 @@
 <template>
   <UiSection>
-    <UiSectionContent>
-      <UiSectionTitle>Contact</UiSectionTitle>
+    <UiSectionContent class="flex">
+      <UiSectionTitle> Book a free consultation </UiSectionTitle>
 
       <form class="w-full flex flex-col gap-9">
-        <div class="flex gap-6">
-          <FormField name="name" class="w-full">
-            <FormLabel>Name</FormLabel>
-            <UiInput />
-            <FormMessage />
-          </FormField>
-          <FormField name="company" class="w-full">
-            <FormLabel>Company</FormLabel>
-            <UiInput />
-            <FormMessage />
-          </FormField>
-        </div>
+        <FormField name="name">
+          <FormLabel>Name</FormLabel>
+          <UiInput />
+          <FormMessage />
+        </FormField>
 
         <div class="flex gap-6">
-          <FormField name="email" class="w-full">
+          <FormField name="email">
             <FormLabel>E-mail</FormLabel>
             <UiInput />
             <FormMessage />
           </FormField>
-          <FormField name="phone" class="w-full">
+          <FormField name="phone">
             <FormLabel>Phone</FormLabel>
             <UiInput />
             <FormMessage />
           </FormField>
         </div>
 
-        <div class="flex gap-6">
-          <FormField name="message" class="w-full">
-            <FormLabel>Message</FormLabel>
-            <UiTextarea />
-            <FormMessage />
-          </FormField>
-
-          <div class="w-full" />
-        </div>
+        <FormField name="message">
+          <FormLabel>Message</FormLabel>
+          <UiTextarea />
+          <FormMessage />
+        </FormField>
       </form>
     </UiSectionContent>
   </UiSection>

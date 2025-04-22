@@ -1,3 +1,58 @@
+<script setup lang="ts">
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const topTrack = useTemplateRef("toptrack");
+const bottomTrack = useTemplateRef("bottomtrack");
+
+const banner = useTemplateRef("banner");
+
+const { x, y, isOutside } = useMouseInElement(banner, {});
+
+onMounted(() => {
+  const width = topTrack.value?.offsetWidth ?? 0;
+
+  const tracks = [topTrack.value, bottomTrack.value];
+
+  tracks.forEach((track, index) => {
+    gsap.to(track, {
+      x: `${((index % 2 === 0 ? -1 : 1) * width) / 3}px`,
+      ease: "linear",
+      scrollTrigger: {
+        trigger: track,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 0.5,
+      },
+    });
+  });
+});
+
+function onBeforeEnter(el: Element) {
+  gsap.set(el, {
+    scale: 0.5,
+    opacity: 0,
+  });
+}
+
+function onEnter(el: Element, done: () => void) {
+  gsap.to(el, {
+    scale: 1,
+    opacity: 1,
+    duration: 0.2,
+    ease: "bounce.in",
+    onComplete: done,
+  });
+  document.body.style.cursor = "none";
+}
+
+function onLeave() {
+  document.body.style.cursor = "auto";
+}
+</script>
+
 <template>
   <div
     ref="banner"
@@ -17,52 +72,22 @@
       </div>
     </div>
 
-    <div
-      v-if="!isOutside"
-      class="shadow-bubble pointer-events-none absolute -translate-1/2 size-16 flex justify-center items-center rounded-full z-50"
-      :style="{
-        top: y + 'px',
-        left: x + 'px',
-      }"
+    <Transition
+      @before-enter="onBeforeEnter"
+      @enter="onEnter"
+      @leave="onLeave"
+      :css="false"
     >
-      <Icon name="lucide:arrow-up" class="text-3xl rotate-45" />
-    </div>
+      <div
+        v-if="!isOutside"
+        class="shadow-bubble pointer-events-none absolute -translate-1/2 size-16 flex justify-center items-center rounded-full z-50"
+        :style="{
+          top: y + 'px',
+          left: x + 'px',
+        }"
+      >
+        <Icon name="lucide:arrow-up" class="text-3xl rotate-45" />
+      </div>
+    </Transition>
   </div>
 </template>
-
-<script setup>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const topTrack = useTemplateRef("toptrack");
-const bottomTrack = useTemplateRef("bottomtrack");
-
-const banner = useTemplateRef("banner");
-
-const { x, y, isOutside } = useMouseInElement(banner, {});
-
-onMounted(() => {
-  const width = topTrack.value.offsetWidth;
-
-  const tracks = [topTrack.value, bottomTrack.value];
-
-  tracks.forEach((track, index) => {
-    gsap.to(track, {
-      x: `${((index % 2 === 0 ? -1 : 1) * width) / 3}px`,
-      ease: "linear",
-      scrollTrigger: {
-        trigger: track,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 0.5,
-      },
-    });
-  });
-});
-
-watch(isOutside, (v) => {
-  document.body.style.cursor = v ? "auto" : "none";
-});
-</script>
