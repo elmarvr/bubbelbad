@@ -6,11 +6,11 @@ const { data: projects } = await useAsyncData(async () =>
 
 <template>
   <UiSection
-    class="pink bg-linear-to-b from-[#FAF5FF] via-[#FEFCFF] to-[#FCF6FF]"
+    class="pink bg-linear-to-b from-[#FAF5FF] via-[#FEFCFF] to-[#f1dceb]"
   >
     <UiSectionContent>
       <div class="flex justify-center">
-        <UiSectionTitle> Projects </UiSectionTitle>
+        <UiSectionTitle> Our work </UiSectionTitle>
       </div>
 
       <div

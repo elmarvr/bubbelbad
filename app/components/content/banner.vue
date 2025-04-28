@@ -54,9 +54,9 @@ function onLeave() {
 </script>
 
 <template>
-  <div
+  <UiSection
     ref="banner"
-    class="flex purple flex-col hover:cursor-none py-20 gap-4 w-full whitespace-nowrap font-display text-9xl font-bold leading-none overflow-x-hidden bg-linear-to-b from-[#C3C3FD] via-[#EAE8FE] to-[#D9D8FD]"
+    class="flex purple flex-col hover:cursor-none gap-4 w-full whitespace-nowrap font-display text-9xl font-bold leading-none overflow-x-hidden bg-linear-to-b from-[#C3C3FD] via-[#EAE8FE] to-[#D9D8FD]"
   >
     <div class="relative">
       <div class="inline-flex gap-16" ref="toptrack">
@@ -89,5 +89,5 @@ function onLeave() {
         <Icon name="lucide:arrow-up" class="text-3xl rotate-45" />
       </div>
     </Transition>
-  </div>
+  </UiSection>
 </template>
