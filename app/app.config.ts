@@ -1,1 +1,6 @@
-export default defineAppConfig({});
+export default defineAppConfig({
+  info: {
+    phone: "",
+    email: "info@bubbelbad.com"
+  }
+});
