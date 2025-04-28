@@ -6,13 +6,15 @@ const { data: contacts } = await useAsyncData(() => {
 
 <template>
   <UiSection class="blue">
-    <div class="flex justify-center">
-      <UiSectionTitle class="pb-4">
-        <slot mdc-unwrap="p" />
-      </UiSectionTitle>
-      <slot />
-    </div>
     <UiSectionContent>
+      <div class="flex flex-col items-center pb-20">
+        <UiSectionTitle class="pb-4">
+          <slot name="title" mdc-unwrap="p" />
+        </UiSectionTitle>
+        <p class="max-w-xl text-center">
+          <slot mdc-unwrap="p" />
+        </p>
+      </div>
       <UiTabs default-value="2" orientation="horizontal">
         <UiTabsList>
           <UiTabsTrigger value="1">Bubbelbad</UiTabsTrigger>

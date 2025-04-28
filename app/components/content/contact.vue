@@ -1,7 +1,20 @@
 <template>
   <UiSection>
     <UiSectionContent class="flex">
-      <UiSectionTitle> Book a free consultation </UiSectionTitle>
+      <div class="pb-20 flex flex-col gap-4">
+        <UiSectionTitle class="pb-0">
+          <slot name="title" mdc-unwrap="p" />
+        </UiSectionTitle>
+        <slot />
+        <ul class="pt-4">
+          <li>
+            <Icon name="lucide:mail" />
+          </li>
+          <li>
+            <Icon name="lucide:phone" />
+          </li>
+        </ul>
+      </div>
 
       <form class="w-full flex flex-col gap-9">
         <FormField name="name">
@@ -25,7 +38,7 @@
 
         <FormField name="message">
           <FormLabel>Message</FormLabel>
-          <UiTextarea />
+          <UiTextarea class="min-h-40" />
           <FormMessage />
         </FormField>
       </form>
