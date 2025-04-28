@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "packageManager": "pnpm@10.5.2",
   "dependencies": {
     "@nuxt/content": "3.4.0",
     "@nuxt/fonts": "0.11.1",
