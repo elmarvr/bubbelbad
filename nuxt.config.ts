@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/i18n",
     "@nuxthub/core",
+    "@nuxthq/studio",
   ],
   css: ["~/assets/css/main.css"],
   vite: {
