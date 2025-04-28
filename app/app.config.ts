@@ -1,6 +1,1 @@
-export default defineAppConfig({
-  info: {
-    phone: "",
-    email: "",
-  },
-});
+export default defineAppConfig({});
