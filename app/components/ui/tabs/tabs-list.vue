@@ -7,7 +7,10 @@ const delegated = reactiveOmit(props, ["class"]);
 </script>
 
 <template>
-  <RekaTabsList v-bind="delegated" :class="cx('flex flex-col', props.class)">
+  <RekaTabsList
+    v-bind="delegated"
+    :class="cx('flex data-[orientation=vertical]:flex-col', props.class)"
+  >
     <slot />
   </RekaTabsList>
 </template>

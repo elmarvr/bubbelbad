@@ -26,5 +26,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim
 Why us?
 ::
 
+::about-us
+
+::
+
 ::contact
 ::

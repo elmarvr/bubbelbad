@@ -20,7 +20,12 @@ const forwarded = useForwardPropsEmits(delegated, emits);
 <template>
   <RekaTabsRoot
     v-bind="forwarded"
-    :class="cx('grid grid-cols-2 w-full gap-x-32', props.class)"
+    :class="
+      cx(
+        'grid data-[orientation=vertical]:grid-cols-2 w-full gap-x-32',
+        props.class
+      )
+    "
   >
     <slot />
   </RekaTabsRoot>

@@ -23,5 +23,21 @@ export default defineNuxtSchema({
         }),
       },
     }),
+    socials: group({
+      instagram: field({
+        icon: "lucide:instagram",
+        type: "string",
+        title: "Instagram",
+        description: "Instagram profile link",
+        default: "",
+      }),
+      youtube: field({
+        icon: "lucide:youtube",
+        type: "string",
+        title: "YouTube",
+        description: "YouTube channel link",
+        default: "",
+      }),
+    }),
   },
 });

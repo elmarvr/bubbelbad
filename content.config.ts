@@ -47,6 +47,15 @@ export default defineContentConfig({
       },
       schema: testimonialSchema(),
     }),
+
+    team_en: defineCollection({
+      type: "data",
+      source: {
+        include: "en/team/*.md",
+        prefix: "/team",
+      },
+      schema: teamSchema(),
+    }),
   },
 });
 
@@ -78,6 +87,15 @@ function testimonialSchema() {
     role: z.string(),
     avatar: z.string(),
     company: z.string(),
+    body: z.any(),
+  });
+}
+
+function teamSchema() {
+  return z.object({
+    name: z.string(),
+    image: z.string(),
+    role: z.string(),
     body: z.any(),
   });
 }

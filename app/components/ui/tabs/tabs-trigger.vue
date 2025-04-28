@@ -12,7 +12,7 @@ const forwarded = useForwardProps(delegated);
     v-bind="forwarded"
     :class="
       cx(
-        'text-start font-display text-2xl font-semibold rounded-full px-6 py-4 flex items-center data-active:bg-accent data-active:text-accent-foreground',
+        'text-start data-[orientation=horizontal]:flex-1 font-display text-2xl font-semibold rounded-full px-6 py-4 flex items-center data-active:bg-accent data-active:text-accent-foreground',
         props.class
       )
     "
