@@ -8,16 +8,18 @@ const { data: contacts } = await useAsyncData(() => {
   <UiSection
     id="about-us"
     class="blue bg-gradient-to-b from-[#F3F5FE] from-20% via-[#E1ECFF] to-[#dce3f9]"
+    align="center"
   >
+    <UiSectionHeader>
+      <UiSectionTitle>
+        <slot name="title" mdc-unwrap="p" />
+      </UiSectionTitle>
+      <UiSectionDescription>
+        <slot />
+      </UiSectionDescription>
+    </UiSectionHeader>
+
     <UiSectionContent>
-      <div class="flex flex-col items-center pb-20">
-        <UiSectionTitle class="pb-4">
-          <slot name="title" mdc-unwrap="p" />
-        </UiSectionTitle>
-        <p class="max-w-xl text-center">
-          <slot mdc-unwrap="p" />
-        </p>
-      </div>
       <UiTabs default-value="2" orientation="horizontal">
         <UiTabsList>
           <UiTabsTrigger value="1">Bubbelbad</UiTabsTrigger>
@@ -27,7 +29,7 @@ const { data: contacts } = await useAsyncData(() => {
         <UiTabsContent value="2" class="grid grid-cols-2">
           <div></div>
 
-          <ul class="grid grid-cols-2 gap-12 t">
+          <ul class="grid grid-cols-2 gap-12">
             <li
               v-for="contact in contacts"
               :key="contact.id"

@@ -8,12 +8,17 @@ const { data: projects } = await useAsyncData(async () =>
   <UiSection
     id="projects"
     class="pink bg-linear-to-b from-[#FAF5FF] via-[#FEFCFF] to-[#f1dceb]"
+    align="center"
   >
+    <UiSectionHeader>
+      <UiSectionTitle>
+        <slot name="title" mdc-unwrap="p" />
+      </UiSectionTitle>
+      <UiSectionDescription>
+        <slot />
+      </UiSectionDescription>
+    </UiSectionHeader>
     <UiSectionContent>
-      <div class="flex justify-center">
-        <UiSectionTitle> Our work </UiSectionTitle>
-      </div>
-
       <div
         v-for="project in projects"
         :key="project.id"

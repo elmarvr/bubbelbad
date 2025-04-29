@@ -7,7 +7,10 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div data-slot="content" :class="cx('container', props.class)">
+  <div
+    data-slot="header"
+    :class="cx('container flex flex-col pb-20', props.class)"
+  >
     <slot />
   </div>
 </template>

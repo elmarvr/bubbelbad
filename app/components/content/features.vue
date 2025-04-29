@@ -14,17 +14,17 @@ const defaultValue = computed(() => {
     id="features"
     class="purple bg-linear-to-b from-[#D9D8FD] via-[#DFE2FE] to-[#F3F5FE]"
   >
-    <UiSectionContent class="grid grid-cols-2 gap-y-20">
-      <div>
-        <UiSectionTitle class="pb-6">
-          <slot name="title" mdc-unwrap="p" />
-        </UiSectionTitle>
+    <UiSectionHeader>
+      <UiSectionTitle>
+        <slot name="title" mdc-unwrap="p" />
+      </UiSectionTitle>
 
+      <UiSectionDescription>
         <slot />
-      </div>
+      </UiSectionDescription>
+    </UiSectionHeader>
 
-      <div />
-
+    <UiSectionContent class="grid grid-cols-2">
       <UiTabs
         :default-value="defaultValue"
         class="grid-cols-subgrid col-span-2"

@@ -10,21 +10,18 @@ const { data: services } = await useAsyncData(async () =>
     id="services"
     class="blue bg-gradient-to-b from-[#DEE7FC] to-[#FAF5FF]"
   >
-    <UiSectionContent class="grid grid-cols-2 gap-y-20">
-      <div>
-        <UiSectionTitle class="pb-6">
-          <slot name="title" mdc-unwrap="p" />
-        </UiSectionTitle>
+    <UiSectionHeader>
+      <UiSectionTitle>
+        <slot name="title" mdc-unwrap="p" />
+      </UiSectionTitle>
 
+      <UiSectionDescription>
         <slot />
-      </div>
+      </UiSectionDescription>
+    </UiSectionHeader>
 
-      <div />
-
-      <UiTabs
-        :default-value="services[0]?.id"
-        class="grid-cols-subgrid col-span-2"
-      >
+    <UiSectionContent>
+      <UiTabs :default-value="services[0]?.id">
         <UiTabsList>
           <UiTabsTrigger
             v-for="service in services"

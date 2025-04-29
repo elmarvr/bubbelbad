@@ -1,5 +1,5 @@
 <template>
-  <UiSection id="contact" class="relative">
+  <UiSection id="contact" class="relative purple">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -14,21 +14,23 @@
       />
     </svg>
 
-    <UiSectionContent class="flex">
-      <div class="pb-20 flex flex-col gap-4">
-        <UiSectionTitle class="pb-0">
+    <UiSectionContent class="flex gap-20">
+      <UiSectionHeader class="max-w-min">
+        <UiSectionTitle>
           <slot name="title" mdc-unwrap="p" />
         </UiSectionTitle>
-        <slot />
-        <ul class="pt-4">
-          <li>
-            <Icon name="lucide:mail" />
-          </li>
-          <li>
-            <Icon name="lucide:phone" />
-          </li>
-        </ul>
-      </div>
+        <UiSectionDescription>
+          <slot />
+          <ul class="pt-4">
+            <li>
+              <Icon name="lucide:mail" class="text-2xl" />
+            </li>
+            <li>
+              <Icon name="lucide:phone" class="text-2xl" />
+            </li>
+          </ul>
+        </UiSectionDescription>
+      </UiSectionHeader>
 
       <form class="w-full flex flex-col gap-9">
         <FormField name="name">
@@ -56,6 +58,10 @@
           <FormMessage />
         </FormField>
       </form>
+
+      <div class="flex flex-col justify-end">
+        <UiButton class="size-32"> Submit </UiButton>
+      </div>
     </UiSectionContent>
   </UiSection>
 </template>
