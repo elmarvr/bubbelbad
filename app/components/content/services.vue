@@ -7,6 +7,7 @@ const { data: services } = await useAsyncData(async () =>
 <template>
   <UiSection
     v-if="services"
+    id="services"
     class="blue bg-gradient-to-b from-[#DEE7FC] to-[#FAF5FF]"
   >
     <UiSectionContent class="grid grid-cols-2 gap-y-20">

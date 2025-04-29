@@ -6,6 +6,7 @@ const { data: projects } = await useAsyncData(async () =>
 
 <template>
   <UiSection
+    id="projects"
     class="pink bg-linear-to-b from-[#FAF5FF] via-[#FEFCFF] to-[#f1dceb]"
   >
     <UiSectionContent>

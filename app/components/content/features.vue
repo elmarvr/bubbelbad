@@ -11,6 +11,7 @@ const defaultValue = computed(() => {
 <template>
   <UiSection
     v-if="features"
+    id="features"
     class="purple bg-linear-to-b from-[#D9D8FD] via-[#DFE2FE] to-[#F3F5FE]"
   >
     <UiSectionContent class="grid grid-cols-2 gap-y-20">

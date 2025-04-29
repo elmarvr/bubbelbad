@@ -2,14 +2,13 @@
 const { data: testimonials } = await useAsyncData(async () =>
   queryCollection("testimonials_en").all()
 );
-
-const items = computed(() => {
-  return [...(testimonials.value ?? []), ...(testimonials.value ?? [])];
-});
 </script>
 
 <template>
-  <UiSection class="yellow banner relative bg-[url('/patterns/tiles.svg')]">
+  <UiSection
+    id="testimonials"
+    class="yellow relative bg-[url('/patterns/tiles.svg')]"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1280 108"
@@ -37,7 +36,7 @@ const items = computed(() => {
         <UiCarousel>
           <UiCarouselContent>
             <UiCarouselItem
-              v-for="testimonial in items"
+              v-for="testimonial in testimonials"
               :key="testimonial.id"
               class="basis-1/2 flex flex-col gap-8"
             >
@@ -94,11 +93,11 @@ const items = computed(() => {
 </template>
 
 <style>
-.banner + section {
+#testimonials + section {
   padding-top: calc(var(--spacing) * 40);
 }
 
-section:has(+ .banner) {
+section:has(+ #testimonials) {
   padding-bottom: calc(var(--spacing) * 40);
 }
 </style>

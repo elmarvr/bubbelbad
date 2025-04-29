@@ -3,12 +3,13 @@ t
 import type { ClassValue } from "cva";
 
 const props = defineProps<{
+  id: string;
   class?: ClassValue;
 }>();
 </script>
 
 <template>
-  <section :class="cx('py-20', props.class)">
+  <section :id="id" :class="cx('py-20', props.class)">
     <slot />
   </section>
 </template>
