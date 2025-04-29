@@ -1,4 +1,3 @@
-t
 <script setup lang="ts">
 import type { ClassValue } from "cva";
 
