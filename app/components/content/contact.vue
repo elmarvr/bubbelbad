@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const app = useAppConfig();
+</script>
+
 <template>
   <UiSection id="contact" class="relative purple">
     <svg
@@ -21,12 +25,14 @@
         </UiSectionTitle>
         <UiSectionDescription>
           <slot />
-          <ul class="pt-4">
-            <li>
+          <ul class="pt-6 space-y-4">
+            <li class="flex items-center gap-3">
               <Icon name="lucide:mail" class="text-2xl" />
+              {{ app.info.email }}
             </li>
-            <li>
+            <li class="flex items-center gap-3">
               <Icon name="lucide:phone" class="text-2xl" />
+              {{ app.info.phone }}
             </li>
           </ul>
         </UiSectionDescription>
@@ -34,33 +40,33 @@
 
       <form class="w-full flex flex-col gap-9">
         <FormField name="name">
-          <FormLabel>Name</FormLabel>
+          <FormLabel>{{ $t("contact.name") }}</FormLabel>
           <UiInput />
           <FormMessage />
         </FormField>
 
         <div class="flex gap-6">
           <FormField name="email">
-            <FormLabel>E-mail</FormLabel>
+            <FormLabel>{{ $t("contact.email") }}</FormLabel>
             <UiInput />
             <FormMessage />
           </FormField>
           <FormField name="phone">
-            <FormLabel>Phone</FormLabel>
+            <FormLabel>{{ $t("contact.phone") }}</FormLabel>
             <UiInput />
             <FormMessage />
           </FormField>
         </div>
 
         <FormField name="message">
-          <FormLabel>Message</FormLabel>
+          <FormLabel>{{ $t("contact.message") }}</FormLabel>
           <UiTextarea class="min-h-40" />
           <FormMessage />
         </FormField>
       </form>
 
       <div class="flex flex-col justify-end">
-        <UiButton class="size-32"> Submit </UiButton>
+        <UiButton class="size-32"> {{ $t("contact.submit") }} </UiButton>
       </div>
     </UiSectionContent>
   </UiSection>

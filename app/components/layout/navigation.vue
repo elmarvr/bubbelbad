@@ -8,7 +8,9 @@
       >
         <I18nLangSwitch />
 
-        <UiButton class="h-9 text-sm ml-6"> Contact </UiButton>
+        <UiButton class="h-9 text-sm ml-6">
+          {{ $t("navigation.contact") }}
+        </UiButton>
       </nav>
     </div>
   </div>

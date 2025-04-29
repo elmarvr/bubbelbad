@@ -32,7 +32,9 @@ const { data: projects } = await useAsyncData(async () =>
 
           <div class="flex-1" />
 
-          <UiButtonLink :to="project.path"> Read more </UiButtonLink>
+          <UiButtonLink :to="project.path">
+            {{ $t("projects.read-more") }}
+          </UiButtonLink>
         </div>
 
         <div class="flex-1 aspect-[5/3] bg-muted rounded"></div>

@@ -81,7 +81,7 @@ function onLeave() {
     >
       <div
         v-if="!isOutside"
-        class="shadow-bubble pointer-events-none absolute -translate-1/2 size-16 flex justify-center items-center rounded-full z-50"
+        class="shadow-bubble bg-background pointer-events-none absolute -translate-1/2 size-16 flex justify-center items-center rounded-full z-50"
         :style="{
           top: y + 'px',
           left: x + 'px',

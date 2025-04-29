@@ -1,6 +1,4 @@
 {
-  "i18n-ally.localesPaths": [
-    "app/lang",
-    "app/components/i18n"
-  ]
+  "i18n-ally.localesPaths": ["app/lang"],
+  "i18n-ally.keystyle": "flat"
 }

@@ -1,1 +1,14 @@
-{}
+{
+  "navigation.contact": "Contact",
+
+  "services.read-more": "Read more",
+  "services.see-all": "See all",
+
+  "projects.read-more": "Read more",
+
+  "contact.name": "Name",
+  "contact.email": "E-mail",
+  "contact.phone": "Phone",
+  "contact.message": "Message",
+  "contact.submit": "Submit"
+}

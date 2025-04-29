@@ -40,9 +40,11 @@ const { data: services } = await useAsyncData(async () =>
           <ContentRenderer :value="service" />
 
           <div class="pt-8 flex gap-4">
-            <UiButtonLink :to="service.path"> Read more </UiButtonLink>
+            <UiButtonLink :to="service.path">
+              {{ $t("services.read-more") }}
+            </UiButtonLink>
             <UiButtonLink variant="link" :to="service.path">
-              See all
+              {{ $t("services.see-all") }}
               <Icon name="lucide:chevron-right" class="text-xl ml-3" />
             </UiButtonLink>
           </div>
