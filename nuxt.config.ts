@@ -42,7 +42,6 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: "en",
-    types: "composition",
     experimental: {
       typedOptionsAndMessages: "all",
     },

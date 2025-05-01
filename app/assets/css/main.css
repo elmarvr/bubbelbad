@@ -47,6 +47,8 @@
 .pink {
   --color-foreground: #410b23;
   --color-button-foreground: #e5679f;
+  --color-accent: #f4d7e0;
+  --color-accent-foreground: #9b1c31;
 
   color: var(--color-foreground);
 }
