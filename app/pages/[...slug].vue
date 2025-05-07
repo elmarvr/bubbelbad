@@ -14,5 +14,7 @@ if (!page.value) {
 </script>
 
 <template>
-  <ContentRenderer v-if="page" :value="page" />
+  <BubbleCursor>
+    <ContentRenderer v-if="page" :value="page" />
+  </BubbleCursor>
 </template>

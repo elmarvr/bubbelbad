@@ -1,7 +1,3 @@
-export function createBubble(config: BubbleConfig): Bubble {
-  return new Bubble(config);
-}
-
 class Bubble {
   x: number;
   y: number;
@@ -20,13 +16,17 @@ class Bubble {
   draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = "#9b1c31"; // Light blue with transparency
+    ctx.fillStyle = "#ffffff30"; // Light blue with transparency
     ctx.fill();
   }
 
   update() {
     this.y -= this.speed; // Move the bubble up at its own speed
     this.x += this.drift; // Apply horizontal drift
+  }
+
+  static create(config: BubbleConfig) {
+    return new Bubble(config);
   }
 }
 
@@ -39,3 +39,4 @@ interface BubbleConfig {
 }
 
 export type { Bubble };
+export const createBubble = Bubble.create;

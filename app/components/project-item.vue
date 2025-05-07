@@ -6,35 +6,33 @@ defineProps<{
 }>();
 
 const item = useTemplateRef("item");
-const isHovered = useElementHover(item);
+const isHovered = useHoverElement(item);
 </script>
 
 <template>
   <div
     ref="item"
-    class="w-full relative py-6 hover:bg-[#e5679f] group hover:text-white"
+    class="w-full relative py-6 transition hover:bg-accent group hover:text-accent-foreground"
   >
-    <div class="container flex gap-12 relative z-10">
+    <div class="container relative flex z-10 items-center gap-16">
       <div
-        class="h-80 aspect-video rounded-md transition overflow-hidden shrink-0 relative group-hover:scale-105"
+        class="h-96 shrink-0 aspect-video bg-muted rounded-xl duration-300 overflow-hidden transition group-hover:scale-105"
       >
-        <img
-          class="absolute inset-0 w-full h-full object-cover transition group-hover:scale-110"
-          :src="`https://picsum.photos/seed/${project.title}/800/800/`"
+        <NuxtImg
+          :src="project.image"
+          format="webp"
+          class="size-full object-cover"
         />
+        <NuxtImg src="/logos/barnsby.svg" />
       </div>
 
       <div>
-        <h3 class="text-6xl pb-4">
+        <h4 class="text-4xl pb-2">
           {{ project.title }}
-        </h3>
+        </h4>
         <ContentRenderer :value="project" />
       </div>
     </div>
-
-    <BubbleParticles
-      v-if="isHovered"
-      class="w-full h-full absolute top-0 left-0"
-    />
+    <BubbleParticles v-if="isHovered" class="size-full absolute left-0 top-0" />
   </div>
 </template>

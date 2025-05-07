@@ -64,23 +64,28 @@ function contentSchema() {
     title: z.string(),
   });
 }
+
 function serviceSchema() {
   return z.object({
     title: z.string(),
     relatedServices: z.array(z.string()).default([]),
   });
 }
+
 function projectSchema() {
   return z.object({
     title: z.string(),
+    image: z.string().editor({ input: "media" }),
   });
 }
+
 function featureSchema() {
   return z.object({
     title: z.string(),
     body: z.any(),
   });
 }
+
 function testimonialSchema() {
   return z.object({
     name: z.string(),
