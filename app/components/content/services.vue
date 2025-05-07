@@ -43,7 +43,7 @@ const { data: services } = await useAsyncData(async () =>
             <NuxtImg :src="service.image" loading="lazy" />
           </div>
 
-          <ContentRenderer :value="service" class="h-[28ch] pb-8" />
+          <ContentRenderer :value="service" class="pb-8" />
 
           <div class="flex gap-4">
             <UiButtonLink :to="service.path">

@@ -33,20 +33,37 @@ onMounted(() => {
   <UiSection
     id="banner"
     ref="section"
-    class="flex purple flex-col gap-4 w-full whitespace-nowrap font-display text-9xl font-bold leading-none overflow-x-hidden bg-linear-to-b from-[#C3C3FD] via-[#EAE8FE] to-[#D9D8FD]"
+    class="purple w-full bg-linear-to-b from-[#C3C3FD] via-[#EAE8FE] to-[#D9D8FD]"
   >
-    <div class="relative">
-      <div class="inline-flex gap-16" ref="toptrack">
-        <span v-for="i in 2" :key="'top-' + i"> <slot mdc-unwrap="p" />! </span>
+    <div
+      class="flex flex-col gap-4 whitespace-nowrap font-display text-9xl font-bold leading-none overflow-hidden"
+    >
+      <div class="relative">
+        <div class="inline-flex gap-16" ref="toptrack">
+          <span v-for="i in 2" :key="'top-' + i">
+            <slot mdc-unwrap="p" />!
+          </span>
+        </div>
+      </div>
+
+      <div class="relative" dir="rtl">
+        <div class="inline-flex gap-16" ref="bottomtrack">
+          <span v-for="i in 2" :key="'bottom-' + i">
+            !<slot mdc-unwrap="p" />
+          </span>
+        </div>
       </div>
     </div>
 
-    <div class="relative" dir="rtl">
-      <div class="inline-flex gap-16" ref="bottomtrack">
-        <span v-for="i in 2" :key="'bottom-' + i">
-          !<slot mdc-unwrap="p" />
-        </span>
-      </div>
+    <div class="container relative h-full">
+      <NuxtImg
+        class="absolute bottom-full translate-y-1/4 left-0 object-cover h-[700px]"
+        src="/images/milkshake-duck.png"
+        loading="lazy"
+        :modifiers="{
+          flop: true,
+        }"
+      />
     </div>
   </UiSection>
 </template>
