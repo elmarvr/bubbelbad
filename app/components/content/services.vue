@@ -10,36 +10,42 @@ const { data: services } = await useAsyncData(async () =>
     id="services"
     class="blue bg-gradient-to-b from-[#DEE7FC] to-[#FAF5FF]"
   >
-    <UiSectionHeader>
-      <UiSectionTitle>
-        <slot name="title" mdc-unwrap="p" />
-      </UiSectionTitle>
-
-      <UiSectionDescription>
-        <slot />
-      </UiSectionDescription>
-    </UiSectionHeader>
-
-    <UiSectionContent>
+    <UiSectionContent as-child>
       <UiTabs :default-value="services[0]?.id">
-        <UiTabsList>
-          <UiTabsTrigger
-            v-for="service in services"
-            :key="service.id"
-            :value="service.id"
-          >
-            {{ service.title }}
-          </UiTabsTrigger>
-        </UiTabsList>
+        <div>
+          <UiSectionHeader>
+            <UiSectionTitle>
+              <slot name="title" mdc-unwrap="p" />
+            </UiSectionTitle>
+
+            <UiSectionDescription>
+              <slot />
+            </UiSectionDescription>
+          </UiSectionHeader>
+          <UiTabsList>
+            <UiTabsTrigger
+              v-for="service in services"
+              :key="service.id"
+              :value="service.id"
+            >
+              {{ service.title }}
+            </UiTabsTrigger>
+          </UiTabsList>
+        </div>
 
         <UiTabsContent
           v-for="service in services"
           :key="service.id"
           :value="service.id"
+          class="flex flex-col justify-end"
         >
-          <ContentRenderer :value="service" />
+          <div class="flex justify-center h-80 pb-16">
+            <NuxtImg :src="service.image" loading="lazy" />
+          </div>
 
-          <div class="pt-8 flex gap-4">
+          <ContentRenderer :value="service" class="h-[28ch] pb-8" />
+
+          <div class="flex gap-4">
             <UiButtonLink :to="service.path">
               {{ $t("services.read-more") }}
             </UiButtonLink>

@@ -1,13 +1,26 @@
 <script setup lang="ts">
 import type { ClassValue } from "cva";
+import type { PrimitiveProps } from "reka-ui";
 
-const props = defineProps<{
-  class?: ClassValue;
-}>();
+const props = withDefaults(
+  defineProps<
+    PrimitiveProps & {
+      class?: ClassValue;
+    }
+  >(),
+  {
+    as: "div",
+  }
+);
 </script>
 
 <template>
-  <div data-slot="content" :class="cx('container', props.class)">
+  <RekaPrimitive
+    data-slot="content"
+    :class="cx('container', props.class)"
+    :as="as"
+    :as-child="asChild"
+  >
     <slot />
-  </div>
+  </RekaPrimitive>
 </template>

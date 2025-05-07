@@ -23,7 +23,6 @@ const isHovered = useHoverElement(item);
           format="webp"
           class="size-full object-cover"
         />
-        <NuxtImg src="/logos/barnsby.svg" />
       </div>
 
       <div>

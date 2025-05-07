@@ -68,6 +68,7 @@ function contentSchema() {
 function serviceSchema() {
   return z.object({
     title: z.string(),
+    image: z.string().editor({ input: "media" }),
     relatedServices: z.array(z.string()).default([]),
   });
 }
